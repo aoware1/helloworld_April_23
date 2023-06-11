@@ -1,7 +1,7 @@
 # Pull base image 
 FROM tomcat:8-jre8 
-EXPOSE 8082
+ADD target/spring-boot-maven-plugin.jar spring-boot-maven-plugin
+COPY ./webapp.war  /usr/local/tomcat/webapps
 
-# Maintainer 
-MAINTAINER "kserge2001@yahoo.fr" 
-COPY /var/lib/jenkins/workspace/devops-ci/webapp/target/webapp.war  /usr/local/tomcat/webapps
+EXPOSE 8082
+ENTRYPOINT ["-java","-jar","spring-boot-maven-plugin.jar"]
