@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/aoware1/helloworld_April_23.git'
+                git branch: 'main', url: 'https://github.com/aoware1/geolocation.git'
             }
         }
         stage('Code Build') {
