@@ -1,6 +1,6 @@
 # Pull base image 
 FROM tomcat:8-jre8 
-ADD target/spring-boot-maven-plugin.jar spring-boot-maven-plugin
+ADD target/spring-boot-maven-plugin.jar spring-boot-maven-plugin.jar
 COPY ./webapp.war  /usr/local/tomcat/webapps
 
 EXPOSE 8082
